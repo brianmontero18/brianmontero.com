@@ -1,0 +1,52 @@
+{
+  "name": "brianmontero.com",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "index.js",
+  "type": "module",
+  "sideEffects": false,
+  "scripts": {
+    "start": "remix dev -c \"node server.mjs\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx remix build",
+    "typecheck": "tsc",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint ."
+  },
+  "dependencies": {
+    "@remix-run/express": "^2.5.0",
+    "@remix-run/node": "^2.5.0",
+    "@remix-run/react": "^2.5.0",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.3",
+    "boxicons": "^2.1.4",
+    "express": "^4.18.2",
+    "filterizr": "^2.2.4",
+    "isbot": "^4.4.0",
+    "isotope-layout": "^3.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-grid-gallery": "^1.0.1-alpha.0",
+    "swiper": "^11.0.5",
+    "typed.js": "^2.1.0",
+    "web-animations-js": "^2.3.2"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.5.0",
+    "@types/aos": "^3.0.7",
+    "@types/isotope-layout": "^3.0.12",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.47.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "sass": "^1.69.7",
+    "sass-loader": "^13.3.3",
+    "typescript": "^5.1.6"
+  }
+}
