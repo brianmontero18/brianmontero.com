@@ -16,6 +16,7 @@ import Portfolio from "./components/Portfolio";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
+import Paypal from "./components/Paypal";
 
 import aosStylesHref from "aos/dist/aos.css";
 import bootstrapStylesHref from "bootstrap/dist/css/bootstrap.min.css";
@@ -148,6 +149,7 @@ export default function App() {
         <Hero />
 
         <main id="main">
+          <Paypal />
           <About />
           {/* <Facts /> */}
           {/* <Skills /> */}
