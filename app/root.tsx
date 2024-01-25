@@ -16,8 +16,6 @@ import { InlineWidget, PopupButton, PopupWidget } from "react-calendly";
 import Menu, { links as menuLinks } from "./components/Menu";
 import Hero, { links as heroLinks } from "./components/Hero";
 import About, { links as aboutLinks } from "./components/About";
-// import Facts, { links as factsLinks } from "./components/Facts";
-// import Skills, { links as skillsLinks } from "./components/Skills";
 import Resume, { links as resumeLinks } from "./components/Resume";
 // import Portfolio, { links as portfolioLinks } from "./components/Portfolio";
 import Services, { links as servicesLinks } from "./components/Services";
@@ -50,10 +48,7 @@ export const links: LinksFunction = () => [
   ...menuLinks(),
   ...heroLinks(),
   ...aboutLinks(),
-  // ...factsLinks(),
-  // ...skillsLinks(),
   ...resumeLinks(),
-  // ...portfolioLinks(),
   ...servicesLinks(),
   ...testimonialsLinks(),
   ...contactLinks(),
@@ -124,40 +119,15 @@ export default function App() {
     <Document>
       <Menu />
       <Hero />
-
       <main id="main">
-        {/* <InlineWidget url="https://calendly.com/brianmontero18/meeting-with-brian" /> */}
-        {/* <PopupWidget
-            url="ttps://calendly.com/brianmontero18/meeting-with-brian"
-            rootElement={window.document.getElementById("footer") as HTMLElement}
-            text="Click here to schedule!"
-            textColor="#ffffff"
-            color="#00a2ff"
-          /> */}
-        {/* <PopupButton
-            url="https://calendly.com/brianmontero18/meeting-with-brian"
-            rootElement={window.document.getElementById("footer") as HTMLElement}
-            text="Click here to schedule!" 
-          />*/}
-
         <HostedFields clientToken={data.clientToken} />
         <About />
-        {/* <Facts /> */}
-        {/* <Skills /> */}
         <Resume />
-        {/* <Portfolio /> */}
         <Services />
         <Testimonials />
         <Contact />
       </main>
-
       <Footer />
-
-      {/* <div id="preloader"></div> */}
-      <a href="#" className="back-to-top d-flex align-items-center justify-content-center">
-        <i className="bi bi-arrow-up-short"></i>
-      </a>
-
       <Outlet />
     </Document>
   );
