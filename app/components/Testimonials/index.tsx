@@ -1,10 +1,11 @@
+import type { LinksFunction } from "@remix-run/node";
 import { Swiper, SwiperSlide } from "swiper/react";
+import testimonials1 from "public/images/testimonials/testimonials-1.jpg";
+import testimonials2 from "public/images/testimonials/testimonials-2.jpg";
+import testimonials3 from "public/images/testimonials/testimonials-3.jpg";
+import styles from "./styles.css";
 
-import testimonials1 from "../../images/testimonials/testimonials-1.jpg";
-import testimonials2 from "../../images/testimonials/testimonials-2.jpg";
-import testimonials3 from "../../images/testimonials/testimonials-3.jpg";
-import testimonials4 from "../../images/testimonials/testimonials-4.jpg";
-import testimonials5 from "../../images/testimonials/testimonials-5.jpg";
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export default function Testimonials() {
   return (
@@ -61,34 +62,6 @@ export default function Testimonials() {
                   <i className="bx bxs-quote-alt-left quote-icon-left"></i>
                   Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim
                   tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i className="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="testimonial-item">
-                <img src={testimonials4} className="testimonial-img" alt="" />
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <p>
-                  <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit
-                  minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i className="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="testimonial-item">
-                <img src={testimonials5} className="testimonial-img" alt="" />
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <p>
-                  <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
-                  labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
                   <i className="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>

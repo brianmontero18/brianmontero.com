@@ -1,5 +1,9 @@
-import programming from "../../images/brian-programming.jpeg";
-import family from "../../images/brian-family.jpeg";
+import type { LinksFunction } from "@remix-run/node";
+import programming from "public/images/brian-programming.jpeg";
+import family from "public/images/brian-family.jpeg";
+import styles from "./styles.css";
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export default function About() {
   return (

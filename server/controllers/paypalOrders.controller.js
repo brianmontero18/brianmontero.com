@@ -1,43 +1,14 @@
-import { generateAccessToken } from "./paypalAuth.controllers.js";
-
-const base = "https://api-m.sandbox.paypal.com";
-
-async function handleResponse(response) {
-  try {
-    const jsonResponse = await response.json();
-    return {
-      jsonResponse,
-      httpStatusCode: response.status,
-    };
-  } catch (err) {
-    const errorMessage = await response.text();
-    throw new Error(errorMessage);
-  }
-}
+import { getAccessToken, PAYPAL_ENDPOINT_URL } from "./paypalAuth.controllers.js";
+import { handleResponse } from "./helpers.js";
 
 /**
  * Create an order to start the transaction.
  * @see https://developer.paypal.com/docs/api/orders/v2/#orders_create
  */
-const createOrder = async (cart) => {
-  // use the cart information passed from the front-end to calculate the purchase unit details
-  console.log("shopping cart information passed from the frontend createOrder() callback:", cart);
-
-  const accessToken = await generateAccessToken();
-  const url = `${base}/v2/checkout/orders`;
-  const payload = {
-    intent: "CAPTURE",
-    purchase_units: [
-      {
-        amount: {
-          currency_code: "USD",
-          value: "100.00",
-        },
-      },
-    ],
-  };
-
-  const response = await fetch(url, {
+export const createOrder = async (intent = "CAPTURE") => {
+  const accessToken = await getAccessToken();
+  const response = await fetch(`${PAYPAL_ENDPOINT_URL}/v2/checkout/orders`, {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${accessToken}`,
@@ -47,8 +18,17 @@ const createOrder = async (cart) => {
       // "PayPal-Mock-Response": '{"mock_application_codes": "PERMISSION_DENIED"}'
       // "PayPal-Mock-Response": '{"mock_application_codes": "INTERNAL_SERVER_ERROR"}'
     },
-    method: "POST",
-    body: JSON.stringify(payload),
+    body: JSON.stringify({
+      intent,
+      purchase_units: [
+        {
+          amount: {
+            currency_code: "USD",
+            value: "100.00",
+          },
+        },
+      ],
+    }),
   });
 
   return handleResponse(response);
@@ -58,11 +38,9 @@ const createOrder = async (cart) => {
  * Capture payment for the created order to complete the transaction.
  * @see https://developer.paypal.com/docs/api/orders/v2/#orders_capture
  */
-const captureOrder = async (orderID) => {
-  const accessToken = await generateAccessToken();
-  const url = `${base}/v2/checkout/orders/${orderID}/capture`;
-
-  const response = await fetch(url, {
+export const captureOrder = async (orderID) => {
+  const accessToken = await getAccessToken();
+  const response = await fetch(`${PAYPAL_ENDPOINT_URL}/v2/checkout/orders/${orderID}/capture`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -78,4 +56,24 @@ const captureOrder = async (orderID) => {
   return handleResponse(response);
 };
 
-export { createOrder, captureOrder };
+/**
+ * Create an order to start the transaction.
+ * @see https://developer.paypal.com/docs/api/orders/v2/#orders_create
+ */
+export const completeOrder = async (orderID, intent) => {
+  const accessToken = await getAccessToken();
+  const response = await fetch(`${PAYPAL_ENDPOINT_URL}/v2/checkout/orders/${orderID}/${intent}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${accessToken}`,
+      // Uncomment one of these to force an error for negative testing (in sandbox mode only). Documentation:
+      // https://developer.paypal.com/tools/sandbox/negative-testing/request-headers/
+      // "PayPal-Mock-Response": '{"mock_application_codes": "MISSING_REQUIRED_PARAMETER"}'
+      // "PayPal-Mock-Response": '{"mock_application_codes": "PERMISSION_DENIED"}'
+      // "PayPal-Mock-Response": '{"mock_application_codes": "INTERNAL_SERVER_ERROR"}'
+    },
+  });
+
+  return handleResponse(response);
+};

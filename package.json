@@ -24,15 +24,19 @@
     "boxicons": "^2.1.4",
     "express": "^4.18.2",
     "filterizr": "^2.2.4",
+    "glightbox": "^3.2.0",
     "isbot": "^4.4.0",
     "isotope-layout": "^3.0.6",
+    "moderndash": "^3.9.0",
     "node-fetch": "^3.3.2",
     "react": "^18.2.0",
+    "react-calendly": "^4.3.0",
     "react-dom": "^18.2.0",
     "react-grid-gallery": "^1.0.1-alpha.0",
     "swiper": "^11.0.5",
     "typed.js": "^2.1.0",
-    "web-animations-js": "^2.3.2"
+    "web-animations-js": "^2.3.2",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.5.0",

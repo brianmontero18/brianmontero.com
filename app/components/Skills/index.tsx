@@ -1,3 +1,8 @@
+import type { LinksFunction } from "@remix-run/node";
+import styles from "./styles.css";
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+
 export default function Skills() {
   return (
     <section id="skills" className="skills section-bg">

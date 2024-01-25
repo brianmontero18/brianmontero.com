@@ -1,16 +1,20 @@
+import type { LinksFunction } from "@remix-run/node";
 import { useState, useEffect, useRef } from "react";
 import AOS from "aos";
 import type IsotopeOptions from "isotope-layout";
 
-import portfolio1 from "../../images/portfolio/portfolio-1.jpg";
-import portfolio2 from "../../images/portfolio/portfolio-2.jpg";
-import portfolio3 from "../../images/portfolio/portfolio-3.jpg";
-import portfolio4 from "../../images/portfolio/portfolio-4.jpg";
-import portfolio5 from "../../images/portfolio/portfolio-5.jpg";
-import portfolio6 from "../../images/portfolio/portfolio-6.jpg";
-import portfolio7 from "../../images/portfolio/portfolio-7.jpg";
-import portfolio8 from "../../images/portfolio/portfolio-8.jpg";
-import portfolio9 from "../../images/portfolio/portfolio-9.jpg";
+import portfolio1 from "public/images/portfolio/portfolio-1.jpg";
+import portfolio2 from "public/images/portfolio/portfolio-2.jpg";
+import portfolio3 from "public/images/portfolio/portfolio-3.jpg";
+import portfolio4 from "public/images/portfolio/portfolio-4.jpg";
+import portfolio5 from "public/images/portfolio/portfolio-5.jpg";
+import portfolio6 from "public/images/portfolio/portfolio-6.jpg";
+import portfolio7 from "public/images/portfolio/portfolio-7.jpg";
+import portfolio8 from "public/images/portfolio/portfolio-8.jpg";
+import portfolio9 from "public/images/portfolio/portfolio-9.jpg";
+import styles from "./styles.css";
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export const initializeIsotope = async (): Promise<IsotopeOptions | void> => {
   // Verificar si `window` está definido (para evitar problemas en el entorno Node.js)
