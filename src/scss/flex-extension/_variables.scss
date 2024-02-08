@@ -1,0 +1,325 @@
+// Variables
+$enable-rounded: true !default;
+$enable-rfs: true !default;
+$enable-antialiasing: true !default;
+$enable-negative-margins: true !default;
+
+$border-width: 1px !default;
+$border-color: #D5DAE1 !default;
+$border-radius: 0.5rem !default;
+$border-radius-sm: 0.375rem !default;
+$border-radius-lg: 0.75rem !default;
+$border-radius-xl: 1rem !default;
+$border-radius-2xl: 1.5rem !default;
+$border-radius-pill: 9999px !default;
+
+$min-contrast-ratio: 2 !default;
+$body-color: #1f2937 !default;
+$text-muted: #4b5563 !default;
+$headings-color: #2A3342 !default;
+
+$link-color: #111827 !default;
+$link-decoration: none !default;
+$link-hover-decoration: none !default;
+
+$white: #fff !default;
+$black: #000 !default;
+$gray-100: #EEF0F3 !default;
+$gray-200: #D5DAE1 !default;
+$gray-300: #BBC3CF !default;
+$gray-400: #8896AB !default;
+$gray-500: #556987 !default;
+$gray-600: #4D5F7A !default;
+$gray-700: #404F65 !default;
+$gray-800: #333F51 !default;
+$gray-900: #2A3342 !default;
+
+$primary: #3B82F6 !default;
+$secondary: #556987 !default;
+$success: #2AD167 !default;
+$info: #a855f7 !default;
+$warning: #F59E0B !default;
+$danger: #EF5844 !default;
+$light: #EEF0F3 !default;
+$dark: #1f2937 !default;
+
+$primary-light: #F5F9FF !default;
+$secondary-light: #8896AB !default;
+$success-light: #F4FDF7 !default;
+$info-light: #faf5ff !default;
+$warning-light: #FFFAF3 !default;
+$danger-light: #FEF7F6 !default;
+$light-light: #F7F8F9 !default;
+$dark-light: #404F65 !default;
+
+$primary-dark: #EBF3FE !default;
+$secondary-dark: #2A3342 !default;
+$success-dark: #EAFAF0 !default;
+$info-dark: #f3e8ff !default;
+$warning-dark: #FEF5E7 !default;
+$danger-dark: #FDEEEC !default;
+$light-dark: #333F51 !default;
+
+$theme-colors: (
+    primary: $primary,
+    secondary: $secondary,
+    success: $success,
+    info: $info,
+    warning: $warning,
+    danger: $danger,
+    light: $light,
+    dark: $dark,
+    primary-light: $primary-light,
+    secondary-light: $secondary-light,
+    success-light: $success-light,
+    info-light: $info-light,
+    warning-light: $warning-light,
+    danger-light: $danger-light,
+    light-light: $light-light,
+    primary-dark: $primary-dark,
+    secondary-dark: $secondary-dark,
+    success-dark: $success-dark,
+    info-dark: $info-dark,
+    warning-dark: $warning-dark,
+    danger-dark: $danger-dark,
+    light-dark: $light-dark
+) !default;
+
+$blue: #3B82F6 !default;
+$red: #EF5844 !default;
+$orange: #F59E0B !default;
+$green: #2AD167 !default;
+$purple: #a855f7 !default;
+
+$blue-100: #EBF3FE !default;
+$blue-200: #CEE0FD !default;
+$blue-300: #B1CDFB !default;
+$blue-400: #76A8F9 !default;
+$blue-500: #3B82F6 !default;
+$blue-600: #3575DD !default;
+$blue-700: #2C62B9 !default;
+$blue-800: #234E94 !default;
+$blue-900: #1D4079 !default;
+
+$green-100: #EAFAF0 !default;
+$green-200: #CAF4D9 !default;
+$green-300: #AAEDC3 !default;
+$green-400: #6ADF95 !default;
+$green-500: #2AD167 !default;
+$green-600: #26BC5E !default;
+$green-700: #209D4E !default;
+$green-800: #197D3E !default;
+$green-900: #156633 !default;
+
+$red-100: #FDEEEC !default;
+$red-200: #FBD6D0 !default;
+$red-300: #F9BDB4 !default;
+$red-400: #F48B7C !default;
+$red-500: #EF5844 !default;
+$red-600: #D7503D !default;
+$red-700: #B34333 !default;
+$red-800: #8F3529 !default;
+$red-900: #752C21 !default;
+
+$yellow-100: #FEF5E7 !default;
+$yellow-200: #FDE7C2 !default;
+$yellow-300: #FBD89D !default;
+$yellow-400: #F8BB54 !default;
+$yellow-500: #F59E0B !default;
+$yellow-600: #DD8E0A !default;
+$yellow-700: #B87708 !default;
+$yellow-800: #935F07 !default;
+$yellow-900: #784D05 !default;
+
+$purple-100: #f3e8ff !default;
+$purple-200: #e9d5ff !default;
+$purple-300: #d8b4fe !default;
+$purple-400: #c084fc !default;
+$purple-500: #a855f7 !default;
+$purple-600: #9333ea !default;
+$purple-700: #7e22ce !default;
+$purple-800: #6b21a8 !default;
+$purple-900: #581c87 !default;
+
+$indigo-100: #F0EEFF !default;
+$indigo-200: #DAD4FF !default;
+$indigo-300: #C3B9FF !default;
+$indigo-400: #9685FF !default;
+$indigo-500: #6951FF !default;
+$indigo-600: #5F49E6 !default;
+$indigo-700: #4F3DBF !default;
+$indigo-800: #3F3199 !default;
+$indigo-900: #33287D !default;
+
+$container-max-widths: (
+    sm: 640px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1280px,
+    2xl: 1536px
+) !default;
+
+$font-family-base: "Poppins",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !default;
+$font-size-base: 1rem !default;
+$font-size-sm: 0.875rem !default;
+$font-size-lg: 1.125rem !default;
+$font-weight-bold: 700 !default;
+$font-weight-medium: 500 !default;
+$small-font-size: .875em !default;
+
+$headings-font-weight: 700 !default;
+$headings-font-family: Poppins,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !default;
+$headings-line-height: 1.25 !default;
+
+$display-font-family: Poppins,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !default;
+$display-font-weight: 500 !default;
+
+$font-sizes: (
+    1: 8rem,
+    2: 6rem,
+    3: 4.5rem,
+    4: 3.75rem,
+    5: 3rem,
+    6: 2.25rem,
+    7: 1.875rem,
+    8: 1.5rem,
+    9: 1.25rem,
+    10: 1.125rem,
+    11: 1rem,
+    12: 0.875rem,
+    13: 0.75rem,
+    14: 0.6875rem
+) !default;
+
+$display-line-height: 1 !default;
+
+$lead-font-size: 1rem !default;
+$lead-font-weight: 400 !default;
+
+$box-shadow: 0 1px 2px 0 rgba(85, 105, 135, 0.1) !default;
+$box-shadow-sm: 0px 32px 64px -12px rgba(85, 105, 135, 0.08) !default;
+$box-shadow-lg: 0px 24px 48px -12px rgba(42, 51, 66, 0.06) !default;
+$box-shadow-inset: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06) !default;
+
+$spacers: (
+    0: 0px,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.25rem,
+    6: 1.5rem,
+    7: 1.75rem,
+    8: 2rem,
+    9: 2.25rem,
+    10: 2.5rem,
+    11: 2.75rem,
+    12: 3rem,
+    14: 3.5rem,
+    16: 4rem,
+    20: 5rem,
+    24: 6rem,
+    28: 7rem,
+    32: 8rem,
+    36: 9rem,
+    40: 10rem,
+    44: 11rem,
+    48: 12rem,
+    52: 13rem,
+    56: 14rem,
+    60: 15rem,
+    64: 16rem,
+    72: 18rem,
+    80: 20rem,
+    96: 24rem
+) !default;
+
+$negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
+
+$badge-font-size: 0.75rem !default;
+$badge-font-weight: 500 !default;
+$badge-color: #2AD167 !default;
+$badge-padding-y: 0.375rem !default;
+$badge-padding-x: 0.75rem !default;
+$badge-border-radius: 9999px !default;
+
+$input-btn-font-family: Poppins,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !default;
+$input-btn-font-size: 0.75rem !default;
+$input-btn-padding-y: 1rem !default;
+$input-btn-padding-x: 1rem !default;
+$input-btn-line-height: 1.25 !default;
+
+$btn-padding-y-sm: 0.5rem !default;
+$btn-padding-x-sm: 1rem !default;
+$btn-font-size-sm: 0.875rem !default;
+$btn-border-radius-sm: 0.375rem !default;
+$btn-padding-y-lg: 1rem !default;
+$btn-padding-x-lg: 1.75rem !default;
+$btn-font-size-lg: 1.125rem !default;
+$btn-font-weight: 500 !default;
+$btn-box-shadow: 0px 1px 2px rgba(105, 81, 255, 0.05) !default;
+$btn-border-radius-lg: 0.375rem !default;
+
+$input-color: #8896AB !default;
+$input-border-color: #D5DAE1 !default;
+$input-placeholder-color: #8896AB !default;
+$input-font-weight: 400 !default;
+$input-font-size: 1rem !default;
+$input-padding-y: 0.75rem !default;
+$input-padding-x: 0.875rem !default;
+$input-border-radius: 0.5rem !default;
+$input-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05) !default;
+
+$nav-link-font-size: 1rem !default;
+$nav-link-font-weight: 500 !default;
+$nav-link-padding-y: 0.75rem !default;
+$nav-link-padding-x: 1rem !default;
+$nav-link-color: #2A3342 !default;
+$nav-pills-link-active-bg: transparent !default;
+
+$navbar-padding-y: 1.5rem !default;
+$navbar-padding-x: 1rem !default;
+$navbar-nav-link-padding-x: 1.25rem !default;
+$navbar-light-color: #000 !default;
+$navbar-light-hover-color: #111827 !default;
+$navbar-light-active-color: #111827 !default;
+$navbar-light-disabled-color: #6b7280 !default;
+$navbar-dark-color: #fff !default;
+$navbar-dark-hover-color: #e5e7eb !default;
+$navbar-dark-active-color: #e5e7eb !default;
+$navbar-dark-disabled-color: #6b7280 !default;
+
+$pagination-padding-y: 0.625rem !default;
+$pagination-padding-x: 1.25rem !default;
+$pagination-color: #BBC3CF !default;
+$pagination-border-color: #EEF0F3 !default;
+$pagination-active-color: #2AD167 !default;
+$pagination-active-bg: #fff !default;
+$pagination-active-border-color: #EEF0F3 !default;
+$pagination-hover-bg: #EEF0F3 !default;
+$pagination-hover-color: #BBC3CF !default;
+$pagination-hover-border-color: #EEF0F3 !default;
+$pagination-focus-bg: #EEF0F3 !default;
+$pagination-focus-color: #BBC3CF !default;
+
+$alert-color: null !default;
+$alert-font-size: null !default;
+$alert-border-width: $border-width !default;
+$alert-border-radius: $border-radius !default;
+
+$alert-border-top-width: $alert-border-width !default;
+$alert-border-right-width: $alert-border-width !default;
+$alert-border-bottom-width: $alert-border-width !default;
+$alert-border-left-width: $alert-border-width !default;
+
+$alert-border-top-right-radius: $alert-border-radius !default;
+$alert-border-top-left-radius: $alert-border-radius !default;
+$alert-border-bottom-right-radius: $alert-border-radius !default;
+$alert-border-bottom-left-radius: $alert-border-radius !default;
+
+$badge-text-transform: null !default;
+
+$display-font-family: null !default;
+
+$font-weight-medium: null !default;
+$font-weight-semibold: null !default;
